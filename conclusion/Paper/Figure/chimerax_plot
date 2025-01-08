@@ -1,0 +1,16 @@
+set bgColor white   # 设置背景白色
+delete @H*   # 删除体系中的所有氢原子
+select ~::name="LIG"   # 对配体进行反选，选出所有膜成分
+color sel light gray   # 将膜的颜色设置为灰色
+size sel stickRadius -.05   # 将膜分子的stick调细
+transparency sel 50 atoms   # 设置膜成分的透明度
+select P   # 选中膜体系中的所有磷原子
+style sel sphere   # 将磷原子设置为球
+size sel atomRadius -.5   # 更改磷原子球的大小
+transparency sel 0 atoms   # 设置磷原子的透明度
+color sel dark orange   # 设置磷原子的颜色
+select ::name="LIG"   # 选中配体分子
+size sel stickRadius +.2   # 调节配体分子stick的粗细
+select /?:89@C*   # 选中配体分子中的所有碳原子
+color sel light sky blue   # 设置配体分子中所有碳原子的颜色
+lighting simple
